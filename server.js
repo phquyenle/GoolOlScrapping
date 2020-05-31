@@ -41,7 +41,7 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 
-var databaseUri = "mongodb://localhost/mongoHeadLines";
+var databaseUri = "mongodb://127.0.0.1:27017/mongoHeadLines";
 
 if (process.env.MONGODB_URI){
   mongoose.connect(process.env.MONGODB_URI);
@@ -90,18 +90,18 @@ app.get("/saved", function(req, res) {
 // A GET request to scrape the echojs website
 app.get("/scrape", function(req, res) {
   // First, we grab the body of the html with request
-  request("https://www.nytimes.com/", function(error, response, html) {
+  request("https://www.mercurynews.com/", function(error, response, html) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(html);
     // Now, we grab every h2 within an article tag, and do the following:
-    $("article").each(function(i, element) {
+    $(".article-info").each(function(i, element) {
 
       // Save an empty result object
       var result = {};
 
       // Add the title and summary of every link, and save them as properties of the result object
-      result.title = $(this).children("h2").text();
-      result.summary = $(this).children(".summary").text();
+      result.title = $(this).children("h4").text();
+      result.summary = $(this).children(".excerpt").text();
       result.link = $(this).children("h2").children("a").attr("href");
 
       // Using our Article model, create a new entry
