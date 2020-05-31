@@ -51,3 +51,7 @@ If your app deletes stories every time someone visits, your users won't be able 
 MongoDB Documentation
 Mongoose Documentation
 Cheerio Documentation
+
+# How the app should look like
+![] (public/assets/images/2.jpg)
+![] (public/assets/images/1.jpg)
