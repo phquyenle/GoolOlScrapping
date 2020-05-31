@@ -6,7 +6,7 @@ var path = require("path");
 
 // Requiring Note and Article models
 var Note = require("./models/Note.js");
-var Article = require("./models/Article.js/index.js");
+var Article = require("./models/Article.js");
 
 // Scraping tools
 var request = require("request");
@@ -14,7 +14,9 @@ var cheerio = require("cheerio");
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
-
+mongoose.set('useNewUrlParser', true)
+mongoose.set('useFindAndModify', true)
+mongoose.set('useCreateIndex', true)
 //Define port
 var port = process.env.PORT || 3000
 

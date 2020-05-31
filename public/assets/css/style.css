@@ -1,0 +1,48 @@
+body {
+    background-image: url("/assets/images/library.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-top: 70px;
+    background-size: 100% 100%;
+}
+
+.jumbotron{
+    background-color: rgba(141, 141, 141, 0.582);
+    color: white;
+    border-style: solid;
+    border-color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.panel-heading{
+    background-color: rgba(36, 33, 33, 0.8);
+    color: white;
+}
+.panel{
+    background-image: url("/assets/images/panel.jpg");
+	border-style: solid;
+	border-color: grey;
+	border-width: 8px;
+
+}
+
+.btn-success{
+	color: rgb(255, 255, 255);
+	background: rgba(28, 134, 42, 0.8);
+}
+#scrape{
+	color: white;
+	background: rgba(8, 64, 87, 0.8);
+}
+.deleteNote {
+	display: inline-block;
+}
+
+.previousNotes {
+    display: inline-block;
+    width: 90%
+}
+
+#scrape {
+    margin: 8px 0px;
+}
